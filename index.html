@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green305 - Explore Miami Sustainably</title>
+    <meta name="description" content="Discover Miami's hidden green gems. From lush parks to serene nature trails, explore the natural beauty of the 305.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green305: #34C759;
+            --green-dark: #2BA84A;
+            --bg-dark: #0D0D0D;
+            --card-bg: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(52, 199, 89, 0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at bottom left, rgba(52, 199, 89, 0.1) 0%, transparent 50%);
+        }
+        
+        .logo-container {
+            margin-bottom: 40px;
+        }
+        
+        .logo-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--green305), var(--green-dark));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            margin: 0 auto 20px;
+            box-shadow: 0 20px 60px rgba(52, 199, 89, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        .logo-text .green { color: var(--green305); }
+        .logo-text .white { color: var(--text-primary); }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--text-primary);
+            color: #000;
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 60px;
+        }
+        
+        .app-store-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+        }
+        
+        .app-store-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 199, 89, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Links Section */
+        .links-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .links-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--green305);
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .link-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+            background: #252525;
+        }
+        
+        .link-card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .link-card-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        
+        .link-card-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--green305);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .footer-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .footer-credits {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        
+        .footer-fiu {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--green305);
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+        
+        /* Floating Elements */
+        .floating-leaf {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: drift 20s linear infinite;
+        }
+        
+        @keyframes drift {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        @media (max-width: 600px) {
+            .logo-text { font-size: 2.5rem; }
+            .tagline { font-size: 1.1rem; }
+            .links-section h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-leaf" style="left: 10%; animation-delay: 0s;">🌿</div>
+    <div class="floating-leaf" style="left: 80%; animation-delay: 5s;">🍃</div>
+    <div class="floating-leaf" style="left: 50%; animation-delay: 10s;">🌴</div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="logo-container">
+            <div class="logo-icon">🌴</div>
+            <div class="logo-text">
+                <span class="green">GREEN</span><span class="white">305</span>
+            </div>
+        </div>
+        
+        <p class="tagline">Discover Miami's hidden green gems. From lush parks to serene nature trails, explore the natural beauty of the 305.</p>
+        
+        <a href="#" class="app-store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            Download on the App Store
+        </a>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <div class="feature-title">Interactive Map</div>
+                <div class="feature-desc">Explore parks, trails, and eco-friendly spots throughout Miami-Dade County</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <div class="feature-title">Check-In & Track</div>
+                <div class="feature-desc">Record your visits, build streaks, and track your exploration journey</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">Learn & Impact</div>
+                <div class="feature-desc">Discover how each location contributes to Miami's conservation efforts</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Links Section -->
+    <section class="links-section">
+        <h2>Resources & Information</h2>
+        
+        <div class="links-grid">
+            <a href="support.html" class="link-card">
+                <div class="link-card-icon">💬</div>
+                <div class="link-card-title">Support</div>
+                <div class="link-card-desc">Get help & FAQs</div>
+            </a>
+            <a href="privacy.html" class="link-card">
+                <div class="link-card-icon">🔒</div>
+                <div class="link-card-title">Privacy Policy</div>
+                <div class="link-card-desc">How we protect your data</div>
+            </a>
+            <a href="terms.html" class="link-card">
+                <div class="link-card-icon">📜</div>
+                <div class="link-card-title">Terms of Service</div>
+                <div class="link-card-desc">Usage guidelines</div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <div class="footer-logo-icon">🌴</div>
+            <span class="footer-text">GREEN305</span>
+        </div>
+        <p class="footer-credits">Created by Pedro Troya</p>
+        <p class="footer-fiu">🎓 FIU Honors College · Mr. Tolga's Class</p>
+        <p class="copyright">© 2025 Green305. All rights reserved.</p>
+    </footer>
+</body>
+</html>
